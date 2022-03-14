@@ -14,7 +14,6 @@ def findHwnd(title):
     win32gui.EnumWindows(get_all_hwnd, 0)
     for h, t in hwnd_title.items():
         if t != "":
-            # print(h,t)
             if title in t:
                 hwnds.append(h)
 

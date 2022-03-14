@@ -1,0 +1,148 @@
+{
+  "roles": [
+    {
+      "name": "/resources/img/people/人物-九夜摩.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九红岭.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九青翎.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九橙翎.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九黄翎.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九绿翎.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九粉翎.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九烈焰.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九瑞娜.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九明尊.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九舞姬.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九斩狂.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九符文.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-九率.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-始.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    },
+    {
+      "name": "/resources/img/people/人物-影.bmp",
+      "map": "苍穹",
+      "map_level": "10",
+      "isGiftBox": "yes",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "yes"
+    }
+  ]
+}
