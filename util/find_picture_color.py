@@ -1,4 +1,5 @@
 import operator
+import sys
 from math import sqrt
 from time import time
 
@@ -17,7 +18,7 @@ def color_son_for_parent(hwnd, color_rbg, threshold, pos):
     color_gbr = color_rbg[::-1]
 
     # 先截图
-    father_img = "../color_temp.bmp"
+    father_img = sys.path[2] + "/color_temp.bmp"
     window_capture(father_img, hwnd, pos)
     father_img_cv = cv2.imread(father_img)
     w, h = father_img_cv.shape[:2]
@@ -30,7 +31,7 @@ def color_son_for_parent(hwnd, color_rbg, threshold, pos):
 
 def picture_son_for_parent(hwnd, son_img, threshold, pos=None):
     # 先截图父图
-    father_img = "../picture_temp.bmp"
+    father_img = sys.path[2] + "/picture_temp.bmp"
     window_capture(father_img, hwnd, pos)
     father_img_cv = cv2.imread(father_img)
     son_img_cv = cv2.imread(son_img)

@@ -7,7 +7,7 @@ from util.role_json_operation import getData
 
 # 获取ini配置  此配置主要是记录当前正常运行的角色的相关信息
 def getIni():
-    configTemp = ConfigObj(sys.path[0] + "/../resources/role/role_current.ini", encoding='UTF8')
+    configTemp = ConfigObj(sys.path[2] + "/resources/config_file/role_current.ini", encoding='UTF8')
     return configTemp
 
 
@@ -15,6 +15,7 @@ def initIni(role):
     tempIni = getIni()
     name = role.get("name")
     tempIni['config']['name'] = name[25:len(name)-4]
+    tempIni['config']['full_name'] = sys.path[2] + name
     tempIni['config']['map'] = role.get("map")
     tempIni['config']['map_level'] = role.get("map_level")
     tempIni['config']['isGiftBox'] = role.get("isGiftBox")

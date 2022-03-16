@@ -3,7 +3,7 @@ import sys
 
 
 def getData():
-    with open(sys.path[0] + '/../resources/role/role_all.json', 'r', encoding='utf8')as fp:
+    with open(sys.path[2] + '/resources/config_file/role_all.json', 'r', encoding='utf8')as fp:
         json_data = json.load(fp)
     return json_data
 
