@@ -36,3 +36,7 @@ def getAllHwnd():
         if t != "":
             print(h, t)
     return hwnd_title.items()
+
+
+if __name__ == '__main__':
+    getAllHwnd()

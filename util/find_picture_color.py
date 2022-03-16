@@ -1,4 +1,5 @@
 import operator
+from math import sqrt
 from time import time
 
 import win32gui
@@ -22,8 +23,9 @@ def color_son_for_parent(hwnd, color_rbg, threshold, pos):
     w, h = father_img_cv.shape[:2]
     for a in range(w):
         for b in range(h):
-            if all(operator.eq(father_img_cv[a, b], color_gbr)):
-                return pos[0]+a, pos[1]+b
+            if color_similarity(father_img_cv[a, b], color_gbr) > threshold:
+                return pos[0] + a, pos[1] + b
+    return 0, 0
 
 
 def picture_son_for_parent(hwnd, son_img, threshold, pos=None):
@@ -63,7 +65,7 @@ def window_capture(filename, hwnd, pos=None):
     saveBitMap = win32ui.CreateBitmap()
     # 获取监控器信息
     MoniterDev = win32api.EnumDisplayMonitors(None, None)
-    if pos is None:    # 强烈建议传坐标，否则w,h是依照监控器长宽，图片会很大
+    if pos is None:  # 强烈建议传坐标，否则w,h是依照监控器长宽，图片会很大
         x1 = 0
         y1 = 0
         w = MoniterDev[0][2][2]
@@ -87,15 +89,23 @@ def window_capture(filename, hwnd, pos=None):
     win32gui.ReleaseDC(hwnd, hwndDC)
 
 
+def color_similarity(color1, color2):
+    r = (color1[0] - color2[0]) / 256
+    g = (color1[1] - color2[1]) / 256
+    b = (color1[2] - color2[2]) / 256
+    diff = 1 - sqrt(r * r + g * g + b * b)
+    return diff
+
+
 if __name__ == '__main__':
     hwnd = findHwnd("钉钉")
-    # window_capture("../3.bmp", hwnd, (18, 324, 47, 348))
-    # start = time()
-    # intx, inty = picture_son_for_parent(hwnd, "../img_1.png", 0.01)
-    # stop = time()
-    # print(str(stop - start) + "秒")
-    # print(intx)
-    # print(inty)
-    # (18,324,47,348)
-    a, b = color_son_for_parent(hwnd, (0,137,248), 1, (18, 324, 47, 348))
+    # # window_capture("../3.bmp", hwnd, (18, 324, 47, 348))
+    # # start = time()
+    # # intx, inty = picture_son_for_parent(hwnd, "../img_1.png", 0.01)
+    # # stop = time()
+    # # print(str(stop - start) + "秒")
+    # # print(intx)
+    # # print(inty)
+    # # (18,324,47,348)
+    a, b = color_son_for_parent(hwnd, (1, 137, 248), 0.7, (18, 324, 47, 348))
     print(a, b)
