@@ -1,148 +1,193 @@
 {
   "roles": [
     {
-      "name": "/resources/img/people/人物-九夜摩.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-shikong.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九红岭.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-shuangyu.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九青翎.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-jianmo.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九橙翎.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-quansha.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九黄翎.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-diyue.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九绿翎.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-hongling.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九粉翎.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-chengling.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九烈焰.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-huangling.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九瑞娜.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-qingling.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九明尊.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-lvling.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九舞姬.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-fenling.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九斩狂.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-moying.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九符文.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-jiulv.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-九率.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-ruina.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-始.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-lieyan.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/人物-影.bmp",
-      "map": "苍穹",
+      "name": "/resources/img/people/role-mingzun.bmp",
+      "map": "cangqiong",
       "map_level": "10",
-      "isGiftBox": "yes",
+      "isGiftBox": "no",
       "isGeDuoBox": "no",
       "isPet": "yes",
-      "isEmail": "yes"
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-wuji.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-daoshi.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-fuwen.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-yemo.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-zhankuang.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
     }
   ]
 }

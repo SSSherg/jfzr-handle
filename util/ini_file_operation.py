@@ -14,7 +14,7 @@ def getIni():
 def initIni(role):
     tempIni = getIni()
     name = role.get("name")
-    tempIni['config']['name'] = name[25:len(name)-4]
+    tempIni['config']['name'] = name[27:len(name)-4]
     tempIni['config']['full_name'] = sys.path[2] + name
     tempIni['config']['map'] = role.get("map")
     tempIni['config']['map_level'] = role.get("map_level")

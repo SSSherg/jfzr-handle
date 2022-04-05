@@ -1,6 +1,12 @@
-from util.ini_file_operation import readIni, initIni
+from time import time
+
+from src.city.before import login, is_login, email
+from src.city.enter import role_chance
+from util.ini_file_operation import readIni, initIni, writeIni
 from util.log import log
+from util.read_memery import get_money
 from util.role_json_operation import getData
+from util.utils import delay
 from util.window import findHwnd
 
 
@@ -9,17 +15,48 @@ def begin():
     roles = getData().get("roles")
     role_size = len(roles)
     start = int(readIni("start"))
+    all_money = 0
+    today_money = 0
     while start < role_size:  # 用ini文件的start 记录当前角色，角色完成或者跳过时，start+1 并写入ini文件
         initIni(roles[start])
+        start_time = time()
+        begin_money = 0
         while True:
             log.info("角色开始：" + readIni("name"))
-            # if not login(people):     # 登录角色
-            #     break  # 跳过此角色
-            # start = start + 1
-            # writeIni("start", start)
-            # if not getEmail(people):   # 收邮件
-            #     break  # 跳过此角色
-        log.info("角色耗时")
+            if not login(hwnd,  readIni("full_name")):     # 登录角色
+                log.info("找不到角色跳过")
+                break  # 跳过此角色
+            if not is_login(hwnd):              # 判断是否已登录
+                log.info("登录不了角色跳过")
+                break  # 跳过此角色
+            if begin_money == 0:
+                begin_money = get_money(hwnd)
+                log.info("拥有金币: " + str(begin_money))
+            if not email(hwnd):              # 判断接收邮件、开盒子、装备宠物等
+                log.info("没装备猪八戒重启")
+                continue  # 重启
+            role_chance_result = role_chance(hwnd, readIni("name"), readIni("map"))
+            if role_chance_result == "break":         # 开始刷图
+                break  # 结束这个角色
+            elif role_chance_result == "reset":
+                continue  # 重启
+            elif not role_chance_result:
+                continue  # 重启
+            break  # 结束这个角色
+        end_money = get_money(hwnd)
+        money = int(end_money) - int(begin_money)
+        stop_time = time()
+        log.info("角色耗时: "+str(stop_time - start_time)+" 秒,获取金币：" + str(money))
         start = start + 1
         writeIni("start", start)
-    log.info("程序结束")
+        all_money = int(all_money) + int(end_money)
+        today_money = int(today_money) + int(money)
+    log.info("程序结束,今日共获取金币：" + str(today_money) + ", 总金币：" + str(all_money))
+
+
+def test():
+    return True
+
+if __name__ == '__main__':
+    real_money = int(8828388888) - int(7777237777)
+    print(real_money)

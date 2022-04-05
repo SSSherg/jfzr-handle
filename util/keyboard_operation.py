@@ -6,18 +6,19 @@ import win32api
 import win32con
 
 from util.mouse_operation import left_click
+from util.utils import delay
 from util.window import findHwnd
 
 VkCode = {
     "back":  0x08,
     "tab":  0x09,
-    "return":  0x0D,
+    "enter":  0x0D,
     "shift":  0x10,
     "control":  0x11,
-    "menu":  0x12,
+    "alt":  0x12,
     "pause":  0x13,
     "capital":  0x14,
-    "escape":  0x1B,
+    "esc":  0x1B,
     "space":  0x20,
     "end":  0x23,
     "home":  0x24,
@@ -81,7 +82,6 @@ def key_down(hwnd, key):
     vk_code = get_virtual_keycode(key)
     scan_code = win32api.MapVirtualKey(vk_code, 0)
     wparam = vk_code
-    print(wparam)
     lparam = (scan_code << 16) | 1
     win32gui.SendMessage(hwnd, win32con.WM_KEYDOWN, wparam, lparam)
 
@@ -96,12 +96,12 @@ def key_up(hwnd, key):
 
 def key_press(hwnd, key):
     key_down(hwnd, key)
-    time.sleep(0.3)
+    delay(10)
     key_up(hwnd, key)
 
 
 if __name__ == '__main__':
-    hwnd = findHwnd("备注.md - Typora")
+    hwnd = findHwnd("JFZR")
     left_click(hwnd, (25,51))
     time.sleep(0.5)
-    key_press(hwnd, "f8")
+    key_press(hwnd, "M")

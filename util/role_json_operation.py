@@ -9,6 +9,6 @@ def getData():
 
 
 if __name__ == '__main__':
-    s = "/resources/img/people/人物-九黄翎.bmp"
+    s = "/resources/img/people/role-huangling.bmp"
     print(len(s))
     print(s[25:len(s)-4])
