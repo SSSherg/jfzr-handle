@@ -59,7 +59,7 @@ def yemo(hwnd, into_result):
             key_up(hwnd, "W")
             for i in range(8):
                 key_press(hwnd, "E")
-                delay(300)
+                delay(500)
             delay(1300)
             if not is_boss_over(hwnd):
                 return False    # boss没打死

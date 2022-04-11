@@ -6,6 +6,7 @@ from util.keyboard_operation import key_up, key_down, key_press
 from util.log import log
 from util.mouse_operation import left_click
 from util.utils import delay
+from util.window import findHwnd
 
 
 def back_city(hwnd):
@@ -23,8 +24,9 @@ def back_city(hwnd):
             delay(1200)
             return True
         else:
+            # log.info("找不到返回城镇")
             key_press(hwnd, "esc")
-            delay(200)
+            delay(500)
 
 
 # 返回频道
@@ -42,8 +44,9 @@ def back_pindao(hwnd):
             delay(1200)
             return True
         else:
+            # log.info("找不到返回频道")
             key_press(hwnd, "esc")
-            delay(200)
+            delay(500)
 
 
 # 退出到角色页面
@@ -61,8 +64,9 @@ def back_change_role(hwnd):
             delay(1200)
             return True
         else:
+            # log.info("找不到返回角色页面")
             key_press(hwnd, "esc")
-            delay(200)
+            delay(500)
 
 
 # 传入1去正常频道，其他为特殊频道
@@ -82,4 +86,5 @@ def enter_pindao(hwnd, change):
 
 
 if __name__ == '__main__':
-    print(1)
+    hwnd = findHwnd("JFZR")
+    back_city(hwnd)

@@ -57,7 +57,7 @@ def lieyan(hwnd, into_result):
             key_up(hwnd, "D")
             delay(300)
             key_press(hwnd, "W")
-            delay(100)
+            delay(300)
             key_press(hwnd, "Q")
             delay(1300)
             if not is_boss_over(hwnd):

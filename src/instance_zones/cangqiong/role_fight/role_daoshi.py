@@ -53,6 +53,8 @@ def daoshi(hwnd, into_result):
             key_press(hwnd, "esc")
             delay(200)
             key_press(hwnd, "G")
+            delay(800)
+            key_press(hwnd, "X")
             delay(1300)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
@@ -99,7 +101,11 @@ def daoshi(hwnd, into_result):
             key_press(hwnd, "V")
             delay(400)
             key_press(hwnd, "X")
-            delay(3700)
+            delay(1000)
+            for g in range(4):
+                left_click(hwnd, (50, 50))
+                delay(300)
+            delay(1700)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
             delay(1200)
@@ -118,6 +124,8 @@ def daoshi(hwnd, into_result):
             key_press(hwnd, "esc")
             delay(300)
             key_press(hwnd, "G")
+            delay(800)
+            key_press(hwnd, "X")
             delay(4500)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
@@ -140,13 +148,6 @@ def daoshi(hwnd, into_result):
 
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
-    key_press(hwnd, "E")
-    delay(100)
-    left_click(hwnd, (50, 50))
-    for i in range(3):
-        key_down(hwnd, "A")
-        delay(400)
-        key_up(hwnd, "A")
-        key_down(hwnd, "D")
-        delay(400)
-        key_up(hwnd, "D")
+    key_press(hwnd, "G")
+    delay(800)
+    key_press(hwnd, "X")

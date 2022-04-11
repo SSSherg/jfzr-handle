@@ -43,7 +43,6 @@ def is_login(hwnd):
         x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/right_bottom_login.bmp", 0.9,
                                       (1562, 852, 1600, 900))
         if x > 0 and y > 0:
-            log.info("登录成功！")
             return True
         else:
             count = count + 1
@@ -62,7 +61,6 @@ def email(hwnd):
         x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/email.bmp", 0.9,
                                       (780, 220, 880, 300))
         if x > 0 and y > 0:
-            log.info("邮箱打开了！")
             email_temp = False
         else:
             key_press(hwnd, "M")
@@ -137,14 +135,12 @@ def email(hwnd):
                 right_click(hwnd, (x, y))
                 delay(200)
                 email_temp = False
-                log.info("装备猪八戒")
                 writeIni("isPet", "no")  # 装备猪了
             else:
                 x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/pig_on.bmp", 0.9,
                                               (1200, 266, 1269, 330))
                 if x > 0 and y > 0:
                     email_temp = False
-                    log.info("已装备猪八戒")
                     writeIni("isPet", "no")  # 装备猪了
                 else:
                     count = count + 1

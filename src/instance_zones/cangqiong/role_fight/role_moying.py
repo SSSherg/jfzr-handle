@@ -100,7 +100,11 @@ def moying(hwnd, into_result):
             delay(400)
             key_up(hwnd, "W")
             key_press(hwnd, "1")
-            delay(4500)
+            delay(1000)
+            for g in range(4):
+                left_click(hwnd, (50, 50))
+                delay(500)
+            delay(1500)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
             delay(1500)

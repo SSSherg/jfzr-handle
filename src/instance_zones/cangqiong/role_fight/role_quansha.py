@@ -35,7 +35,9 @@ def quansha(hwnd, into_result):
             key_down(hwnd, "W")
             delay(500)
             key_up(hwnd, "W")
-            key_press(hwnd, "alt")
+            key_press(hwnd, "R")
+            delay(800)
+            key_press(hwnd, "X")
             delay(3800)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
@@ -152,4 +154,6 @@ def quansha(hwnd, into_result):
 
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
-    print(1)
+    key_press(hwnd, "R")
+    delay(800)
+    key_press(hwnd, "X")

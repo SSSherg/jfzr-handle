@@ -87,7 +87,7 @@ def is_boss(hwnd):
     count = 0
     while True:
         x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.9,
-                                      (1110, 30, 1220, 110))
+                                      (430, 40, 1130, 100))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
             return True
