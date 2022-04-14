@@ -145,15 +145,6 @@
       "isEmail": "no"
     },
     {
-      "name": "/resources/img/people/role-wuji.bmp",
-      "map": "cangqiong",
-      "map_level": "10",
-      "isGiftBox": "no",
-      "isGeDuoBox": "no",
-      "isPet": "yes",
-      "isEmail": "no"
-    },
-    {
       "name": "/resources/img/people/role-daoshi.bmp",
       "map": "cangqiong",
       "map_level": "10",
@@ -164,6 +155,15 @@
     },
     {
       "name": "/resources/img/people/role-fuwen.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-wuji.bmp",
       "map": "cangqiong",
       "map_level": "10",
       "isGiftBox": "no",
