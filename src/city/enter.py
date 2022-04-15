@@ -17,7 +17,7 @@ from src.instance_zones.cangqiong.role_fight.role_wuji import wuji
 from src.instance_zones.cangqiong.role_fight.role_yemo import yemo
 from src.instance_zones.cangqiong.role_fight.role_zhankuang import zhankuang
 from src.instance_zones.public_method import is_frequency_over
-from util.find_picture_color import color_son_for_parent
+from util.find_picture_color import colors_son_for_parent
 from util.keyboard_operation import key_press, key_down, key_up
 from util.log import log
 from util.mouse_operation import scroll, left_click, move_to
@@ -295,7 +295,7 @@ def into_cangqiong(hwnd):
     delay(6500)
     count = 0
     while True:
-        x, y = color_son_for_parent(hwnd, (150, 255, 255), 0.9, (20, 785, 130, 901))
+        x, y = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (20, 785, 130, 901))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
             key_up(hwnd, "D")

@@ -2,7 +2,7 @@
 import sys
 
 from src.city.exit import back_city, back_change_role
-from util.find_picture_color import picture_son_for_parent, color_son_for_parent
+from util.find_picture_color import picture_son_for_parent, colors_son_for_parent
 
 # 判断是否次数用尽，true为没次数了，
 from util.keyboard_operation import key_down, key_up, key_press
@@ -67,7 +67,7 @@ def loop_map(hwnd):
 def zones_one(hwnd):
     count = 0
     while True:
-        x, y = color_son_for_parent(hwnd, (255, 0, 0), 0.9, (398, 781, 452, 840))
+        x, y = colors_son_for_parent(hwnd, [(255, 0, 0)], 0.9, (398, 781, 452, 840))
         if x > 0 and y > 0:
             for i in range(5):
                 scroll(hwnd, -120, (50, 50))
@@ -82,7 +82,7 @@ def zones_one(hwnd):
                 return False
 
 
-# 判断boss图 根据boss血量的x100
+# 判断boss图
 def is_boss(hwnd):
     count = 0
     while True:
@@ -136,7 +136,7 @@ def sell_page(hwnd):
                 break
     if is_sale:
         # 先判断初级装备
-        x, y = color_son_for_parent(hwnd, (84, 90, 169), 0.9, (695, 619, 722, 647))
+        x, y = colors_son_for_parent(hwnd, [(84, 90, 169)], 0.9, (695, 619, 722, 647))
         if x > 0 and y > 0:
             delay(400)
             left_click(hwnd, (710, 633))  # 初级装备勾选栏
@@ -147,7 +147,7 @@ def sell_page(hwnd):
                 sell(hwnd)
             delay(1000)
         # 先判断中级装备
-        x, y = color_son_for_parent(hwnd, (84, 90, 169), 0.9, (790, 619, 822, 647))
+        x, y = colors_son_for_parent(hwnd, [(84, 90, 169)], 0.9, (790, 619, 822, 647))
         if x > 0 and y > 0:
             delay(400)
             left_click(hwnd, (809, 633))  # 中级装备勾选栏
@@ -157,7 +157,7 @@ def sell_page(hwnd):
                 delay(400)
             delay(1500)
         # 先判断高级装备
-        x, y = color_son_for_parent(hwnd, (84, 90, 169), 0.9, (887, 619, 927, 647))
+        x, y = colors_son_for_parent(hwnd, [(84, 90, 169)], 0.9, (887, 619, 927, 647))
         if x > 0 and y > 0:
             delay(400)
             left_click(hwnd, (906, 633))  # 高级装备勾选栏
@@ -176,7 +176,7 @@ def sell_page(hwnd):
 def sell(hwnd):
     count = 0
     while True:
-        x, y = color_son_for_parent(hwnd, (221, 221, 223), 0.9, (800, 682, 1000, 721))
+        x, y = colors_son_for_parent(hwnd, [(221, 221, 223)], 0.9, (800, 682, 1000, 721))
         if x > 0 and y > 0:
             delay(300)
             left_click(hwnd, (x, y))

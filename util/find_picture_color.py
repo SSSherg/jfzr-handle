@@ -15,19 +15,22 @@ from util.window import findHwnd
 # 这个截图会把程序的导航（最上面含有标题的白色背景部分算进去。所以需要在y轴加上相应的高度）
 TITLE_Y = 25
 
-def color_son_for_parent(hwnd, color_rbg, threshold, pos):
-    # color 为rgb,需转为bgr
-    color_gbr = color_rbg[::-1]
 
-    # 先截图
-    father_img = sys.path[2] + "/color_temp.bmp"
-    window_capture(father_img, hwnd, pos)
-    father_img_cv = cv2.imread(father_img)
-    w, h = father_img_cv.shape[:2]
-    for a in range(w):
-        for b in range(h):
-            if color_similarity(father_img_cv[a, b], color_gbr) >= threshold:
-                return pos[0] + b - 3, pos[1] + a - 1    # 这样减返回才是正确的坐标
+# 多色找图 color_rbg为列表，示例：[(1,1,1)]
+def colors_son_for_parent(hwnd, color_rbgs, threshold, pos):
+    for color_rbg in color_rbgs:
+        # color 为rgb,需转为bgr
+        color_gbr = color_rbg[::-1]
+
+        # 先截图
+        father_img = sys.path[2] + "/color_temp.bmp"
+        window_capture(father_img, hwnd, pos)
+        father_img_cv = cv2.imread(father_img)
+        w, h = father_img_cv.shape[:2]
+        for a in range(w):
+            for b in range(h):
+                if color_similarity(father_img_cv[a, b], color_gbr) >= threshold:
+                    return pos[0] + b - 3, pos[1] + a - 1    # 这样减返回才是正确的坐标
     return 0, 0
 
 
@@ -131,14 +134,14 @@ if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
     # window_capture("../3.bmp", hwnd, (1305, 64, 1500, 765))
     # # start = time()
-    x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.9,
-                                      (430, 40, 1130, 100))
-    print(x,y)
+    # x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.9,
+    #                                   (430, 40, 1130, 100))
+    # print(x,y)
     # stop = time()
     # # print(str(stop - start) + "秒")
 
     # # print(inty)
     # # # # (18,324,47,348)
-    # a, b = color_son_for_parent(hwnd, (57, 150, 99), 0.9, (1504, 93, 1552, 162))
-    # print(a, b)
+    a, b = colors_son_for_parent(hwnd, [(119, 147, 76)], 0.9, (1414, 33, 1512, 122))
+    print(a, b)
     # print(color_similarity((84, 90, 169),(84, 90, 169)))

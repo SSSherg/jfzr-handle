@@ -7,7 +7,7 @@ import ctypes
 from util.window import findHwnd
 
 mirror_base_address = 0x00400000  # 镜像基址
-gold_deviation_address = mirror_base_address + 0x2CB62A4  # 金币基址
+gold_deviation_address = mirror_base_address + 0x2CCE67C  # 金币基址
 
 
 def get_money(hwnd):
