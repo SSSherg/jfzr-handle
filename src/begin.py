@@ -4,6 +4,7 @@ from src.city.before import login, is_login, email
 from src.city.enter import role_chance
 from util.ini_file_operation import readIni, initIni, writeIni
 from util.log import log
+from util.process_operation import kill
 from util.read_memery import get_money
 from util.role_json_operation import getData
 from util.utils import delay
@@ -52,6 +53,7 @@ def begin():
         all_money = int(all_money) + int(end_money)
         today_money = int(today_money) + int(money)
     log.info("程序结束,今日共获取金币：" + str(today_money) + ", 总金币：" + str(all_money))
+    kill(hwnd)
 
 
 def test():

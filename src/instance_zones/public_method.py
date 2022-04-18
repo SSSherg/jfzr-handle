@@ -86,8 +86,8 @@ def zones_one(hwnd):
 def is_boss(hwnd):
     count = 0
     while True:
-        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.9,
-                                      (430, 40, 1130, 100))
+        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.8,
+                                      (1130, 40, 1230, 100))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
             return True

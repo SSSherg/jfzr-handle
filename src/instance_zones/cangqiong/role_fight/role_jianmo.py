@@ -39,7 +39,7 @@ def jianmo(hwnd, into_result):
             delay(2700)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
-            delay(500)
+            delay(800)
             key_up(hwnd, "F")
             key_up(hwnd, "W")
             key_down(hwnd, "D")

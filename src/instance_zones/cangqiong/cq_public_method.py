@@ -94,10 +94,5 @@ def cq_left_to_right(hwnd):
 
 
 
-
-
-
-
-
 if __name__ == '__main__':
     print(1)

@@ -7,7 +7,8 @@ import win32process
 from util.window import findHwnd
 
 
-def kill(pid):
+def kill(hwnd):
+    h_pid, pid = win32process.GetWindowThreadProcessId(hwnd)  # 获取窗口ID
     try:
         os.kill(pid, signal.SIGINT)
         print('The process with PID %s has been killed' % pid)
@@ -17,5 +18,4 @@ def kill(pid):
 
 if __name__ == '__main__':
     hwnd = findHwnd("记事本")
-    h_pid, pid = win32process.GetWindowThreadProcessId(hwnd)  # 获取窗口ID
-    kill(pid)
+    kill(hwnd)

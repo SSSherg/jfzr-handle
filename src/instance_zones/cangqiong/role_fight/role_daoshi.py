@@ -37,7 +37,7 @@ def daoshi(hwnd, into_result):
             delay(3000)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
-            delay(500)
+            delay(1500)
             key_up(hwnd, "F")
             key_up(hwnd, "W")
             key_down(hwnd, "D")
