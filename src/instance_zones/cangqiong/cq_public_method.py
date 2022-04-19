@@ -55,7 +55,7 @@ def cq_left_to_right(hwnd):
     count = 0
     while True:
         delay(500)
-        x, y = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (20, 785, 130, 901))
+        x, y = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (60, 785, 110, 851))
         if x > 0 and y > 0:
             delay(500)
             left_click(hwnd, (710, 460))  # 点右图
@@ -64,6 +64,7 @@ def cq_left_to_right(hwnd):
             delay(500)
             key_press(hwnd, "enter")
             delay(500)
+            log.info("左苍穹图内进右苍穹")
             if is_frequency_over(hwnd):
                 delay(400)
                 key_press(hwnd, "enter")

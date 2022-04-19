@@ -10,10 +10,11 @@ from util.utils import delay
 from util.window import findHwnd
 
 
-def jiulv(hwnd, into_result):
+# position 因为是左右图，所以进右图的情况分为城镇进和左图进，没进成功的区别在于多一步返回城镇，in为左图进，out为城镇进
+def jiulv(hwnd, into_result, position):
     if into_result == "left":
         while True:
-            if not zones_one(hwnd):
+            if not zones_one(hwnd, position):
                 return False    # 没进一图
             key_press(hwnd, "f2")
             key_down(hwnd, "W")
@@ -76,10 +77,10 @@ def jiulv(hwnd, into_result):
                 delay(500)
                 key_up(hwnd, "S")
                 cq_left_to_right(hwnd)
-                return jiulv(hwnd, "right")
+                return jiulv(hwnd, "right", "in")
     else:  # 右图
         while True:
-            if not zones_one(hwnd):
+            if not zones_one(hwnd, position):
                 return False    # 没进一图
             key_press(hwnd, "f2")
             key_down(hwnd, "W")

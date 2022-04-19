@@ -34,7 +34,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return shikong(hwnd, into_result)
+                return shikong(hwnd, into_result, "out")
         else:
             log.info("地图错误："+map)
             return "break"
@@ -46,7 +46,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return shuangyu(hwnd, into_result)
+                return shuangyu(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -58,7 +58,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return jianmo(hwnd, into_result)
+                return jianmo(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -70,7 +70,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return quansha(hwnd, into_result)
+                return quansha(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -82,7 +82,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return diyue(hwnd, into_result)
+                return diyue(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -94,7 +94,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return hongling(hwnd, into_result)
+                return hongling(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -106,7 +106,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return hongling(hwnd, into_result)
+                return hongling(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -118,7 +118,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return hongling(hwnd, into_result)
+                return hongling(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -130,7 +130,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return hongling(hwnd, into_result)
+                return hongling(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -142,7 +142,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return hongling(hwnd, into_result)
+                return hongling(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -154,7 +154,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return hongling(hwnd, into_result)
+                return hongling(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -166,7 +166,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return moying(hwnd, into_result)
+                return moying(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -178,7 +178,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return jiulv(hwnd, into_result)
+                return jiulv(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -190,7 +190,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return ruina(hwnd, into_result)
+                return ruina(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -202,7 +202,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return lieyan(hwnd, into_result)
+                return lieyan(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -214,7 +214,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return mingzun(hwnd, into_result)
+                return mingzun(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -226,7 +226,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return wuji(hwnd, into_result)
+                return wuji(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -238,7 +238,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return daoshi(hwnd, into_result)
+                return daoshi(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -250,7 +250,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return fuwen(hwnd, into_result)
+                return fuwen(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -262,7 +262,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return yemo(hwnd, into_result)
+                return yemo(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"
@@ -274,7 +274,7 @@ def role_chance(hwnd, name, map):
             elif into_result == "break":
                 return "break"
             else:
-                return zhankuang(hwnd, into_result)
+                return zhankuang(hwnd, into_result, "out")
         else:
             log.info("地图错误：" + map)
             return "break"

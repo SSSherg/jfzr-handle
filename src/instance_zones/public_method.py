@@ -2,9 +2,9 @@
 import sys
 
 from src.city.exit import back_city, back_change_role
-from util.find_picture_color import picture_son_for_parent, colors_son_for_parent
-
-# 判断是否次数用尽，true为没次数了，
+from util.date_utils import getTimeStr
+from util.find_picture_color import picture_son_for_parent, colors_son_for_parent, capture_the_current_window_screen
+from util.ini_file_operation import readIni
 from util.keyboard_operation import key_down, key_up, key_press
 from util.log import log
 from util.mouse_operation import scroll, left_click, move_to, left_double_click
@@ -12,6 +12,7 @@ from util.utils import delay
 from util.window import findHwnd
 
 
+# 判断是否次数用尽，true为没次数了，
 def is_frequency_over(hwnd):
     x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/frequency_over.bmp", 0.9,
                                   (552, 343, 1058, 516))
@@ -36,6 +37,7 @@ def is_boss_over(hwnd):
             count = count + 1
             if count > 30:
                 log.info("没打死boss重启")
+                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-is_boss_over.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
                 return False
@@ -58,13 +60,14 @@ def loop_map(hwnd):
             count = count + 1
             if count > 20:
                 log.info("循环开图错误重启")
+                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-loop_map.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
                 return False
 
 
 # 判断一图 根据左下方血量找色
-def zones_one(hwnd):
+def zones_one(hwnd, position="out"):
     count = 0
     while True:
         x, y = colors_son_for_parent(hwnd, [(255, 0, 0)], 0.9, (398, 781, 452, 840))
@@ -78,6 +81,9 @@ def zones_one(hwnd):
             count = count + 1
             if count > 50:
                 log.info("没进一图重启")
+                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-zones_one.bmp")
+                if position == "in":
+                    back_city(hwnd)
                 back_change_role(hwnd)
                 return False
 
@@ -99,6 +105,7 @@ def is_boss(hwnd):
             count = count + 1
             if count > 20:
                 log.info("没进boss图重启")
+                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-is_boss.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
                 return False
@@ -133,6 +140,7 @@ def sell_page(hwnd):
             count = count + 1
             if count > 1:  # 重复2次就是没装备
                 log.info("没装备卖")
+                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-sell_page.bmp")
                 break
     if is_sale:
         # 先判断初级装备
@@ -141,7 +149,7 @@ def sell_page(hwnd):
             delay(400)
             left_click(hwnd, (710, 633))  # 初级装备勾选栏
             delay(400)
-            if not sell(hwnd):     # 会出现失效问题
+            if not sell(hwnd):  # 会出现失效问题
                 left_click(hwnd, (710, 633))  # 初级装备勾选栏
                 delay(400)
                 sell(hwnd)
@@ -231,4 +239,3 @@ if __name__ == '__main__':
         key_press(hwnd, "esc")
         delay(400)
         key_press(hwnd, "esc")
-

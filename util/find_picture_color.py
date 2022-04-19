@@ -23,7 +23,7 @@ def colors_son_for_parent(hwnd, color_rbgs, threshold, pos):
         color_gbr = color_rbg[::-1]
 
         # 先截图
-        father_img = sys.path[2] + "/color_temp.bmp"
+        father_img = sys.path[2] + "/img_temp/color_temp.bmp"
         window_capture(father_img, hwnd, pos)
         father_img_cv = cv2.imread(father_img)
         w, h = father_img_cv.shape[:2]
@@ -36,7 +36,7 @@ def colors_son_for_parent(hwnd, color_rbgs, threshold, pos):
 
 def picture_son_for_parent(hwnd, son_img, threshold, pos=None):
     # 先截图父图
-    father_img = sys.path[2] + "/picture_temp.bmp"
+    father_img = sys.path[2] + "/img_temp/picture_temp.bmp"
     window_capture(father_img, hwnd, pos)
     father_img_cv = cv2.imread(father_img)
     son_img_cv = cv2.imread(son_img)
@@ -106,7 +106,7 @@ def color_similarity(color1, color2):
 
 def picture_son_for_parent1(hwnd, son_img, threshold, pos=None):
     # 先截图父图
-    father_img = sys.path[2] + "/picture_temp.bmp"
+    father_img = sys.path[2] + "/img_temp/picture_temp.bmp"
     window_capture(father_img, hwnd, pos)
     father_img_cv = cv2.imread(father_img)
     son_img_cv = cv2.imread(son_img)
@@ -129,6 +129,20 @@ def picture_son_for_parent1(hwnd, son_img, threshold, pos=None):
         return pt
     return 0, 0
 
+
+def capture_the_current_window_screen(hwnd, file_name):
+    window_capture(sys.path[2] + "/img_temp/" + file_name, hwnd, get_length_width(hwnd))
+
+
+def get_length_width(hwnd):
+    l_w = win32gui.GetWindowRect(hwnd)
+    x1 = l_w[0]
+    y1 = l_w[1]
+    x2 = l_w[2]
+    y2 = l_w[3]
+    return x1 - x1, y1 - y1, x2 - x1, y2 - y1
+
+
 if __name__ == '__main__':
     # 多往下25px  39
     hwnd = findHwnd("JFZR")
@@ -142,6 +156,9 @@ if __name__ == '__main__':
 
     # # print(inty)
     # # # # (18,324,47,348)
-    a, b = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (60, 785, 110, 851))
-    print(a, b)
+    # a, b = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (60, 785, 110, 851))
+    # print(a, b)
     # print(color_similarity((84, 90, 169),(84, 90, 169)))
+    # hwnd = findHwnd("钉钉")
+    # print(get_length_width(hwnd))
+    # window_capture(sys.path[2] + "/img_temp/1.bmp", hwnd, get_length_width(hwnd))
