@@ -2,6 +2,9 @@
 import datetime
 import time
 
+from util.utils import delay
+
+
 def getCurrentMilliSecondTime():
     """
     description:  获取当前时间-毫秒级
@@ -190,4 +193,8 @@ def getCurrentWeekTime():
 
 
 if __name__ == '__main__':
-    print(getTimeStr())
+    print(getTimeStr(time.time()))
+    print(time.localtime(time.time()))
+    delay(2000)
+    print(getTimeStr(time.time()))
+    print(time.localtime(time.time()))

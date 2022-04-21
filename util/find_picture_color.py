@@ -148,9 +148,9 @@ if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
     # window_capture("../3.bmp", hwnd, (1305, 64, 1500, 765))
     # # start = time()
-    # x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/change_role.bmp", 0.9,
-    #                                   (1099, 441, 1255, 483))
-    # print(x,y)
+    x, y = picture_son_for_parent1(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.7,
+                                      (1130, 40, 1230, 100))
+    print(x,y)
     # stop = time()
     # # print(str(stop - start) + "秒")
 

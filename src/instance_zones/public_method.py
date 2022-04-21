@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
+import time
 
 from src.city.exit import back_city, back_change_role
 from util.date_utils import getTimeStr
@@ -37,7 +38,7 @@ def is_boss_over(hwnd):
             count = count + 1
             if count > 30:
                 log.info("没打死boss重启")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-is_boss_over.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-is_boss_over.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
                 return False
@@ -60,7 +61,7 @@ def loop_map(hwnd):
             count = count + 1
             if count > 20:
                 log.info("循环开图错误重启")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-loop_map.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-loop_map.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
                 return False
@@ -81,7 +82,7 @@ def zones_one(hwnd, position="out"):
             count = count + 1
             if count > 50:
                 log.info("没进一图重启")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-zones_one.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-zones_one.bmp")
                 if position == "in":
                     back_city(hwnd)
                 back_change_role(hwnd)
@@ -92,7 +93,7 @@ def zones_one(hwnd, position="out"):
 def is_boss(hwnd):
     count = 0
     while True:
-        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.8,
+        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.7,
                                       (1130, 40, 1230, 100))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
@@ -105,7 +106,7 @@ def is_boss(hwnd):
             count = count + 1
             if count > 20:
                 log.info("没进boss图重启")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-is_boss.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-is_boss.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
                 return False
@@ -136,11 +137,10 @@ def sell_page(hwnd):
             is_sale = True
             break
         else:
-            delay(400)
             count = count + 1
-            if count > 1:  # 重复2次就是没装备
+            if count > 2:  # 重复3次就是没装备
                 log.info("没装备卖")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-sell_page.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-sell_page.bmp")
                 break
     if is_sale:
         # 先判断初级装备

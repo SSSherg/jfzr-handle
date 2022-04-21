@@ -5,7 +5,7 @@ import win32gui
 import win32api
 import win32con
 
-from util.mouse_operation import left_click
+from util.mouse_operation import left_click, move_to
 from util.utils import delay
 from util.window import findHwnd
 
@@ -101,7 +101,7 @@ def key_press(hwnd, key):
 
 
 if __name__ == '__main__':
-    hwnd = findHwnd("JFZR")
-    left_click(hwnd, (25,51))
-    time.sleep(0.5)
-    key_press(hwnd, "M")
+    hwnd = findHwnd("智能中枢接口.md - Typora")
+    while True:
+        left_click(hwnd, (50, 50))
+        key_press(hwnd, "f8")

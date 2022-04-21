@@ -38,7 +38,7 @@ def back_city(hwnd):
                 key_up(hwnd, "S")
             if count > 25:
                 log.info("找不到返回城镇")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-back_city.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-back_city.bmp")
                 count = 0
 
 
@@ -67,7 +67,7 @@ def back_pindao(hwnd):
                 key_up(hwnd, "S")
             if count > 15:
                 log.info("找不到返回频道")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-back_pindao.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-back_pindao.bmp")
                 count = 0
 
 
@@ -96,7 +96,7 @@ def back_change_role(hwnd):
                 key_up(hwnd, "S")
             if count > 15:
                 log.info("找不到返回角色页面")
-                capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-back_change_role.bmp")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-back_change_role.bmp")
                 count = 0
 
 
@@ -118,4 +118,4 @@ def enter_pindao(hwnd, change):
 
 if __name__ == '__main__':
     hwnd = findHwnd("钉钉")
-    capture_the_current_window_screen(hwnd, getTimeStr() + readIni("name") + "-is_boss_over.bmp")
+    capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-is_boss_over.bmp")
