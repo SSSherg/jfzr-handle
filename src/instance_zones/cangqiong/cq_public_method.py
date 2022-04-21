@@ -33,7 +33,7 @@ def cq_zones_left_two(hwnd):
 def cq_zones_right_two(hwnd):
     count = 0
     while True:
-        x, y = colors_son_for_parent(hwnd, [(57, 150, 99), (119, 147, 76)], 0.9, (1504, 93, 1552, 162))
+        x, y = colors_son_for_parent(hwnd, [(57, 150, 99), (119, 147, 76)], 0.9, (1510, 98, 1550, 148))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
             return True

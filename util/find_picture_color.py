@@ -148,8 +148,8 @@ if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
     # window_capture("../3.bmp", hwnd, (1305, 64, 1500, 765))
     # # start = time()
-    x, y = picture_son_for_parent1(hwnd, sys.path[2] + "/resources/img/instance_zones/boss.bmp", 0.7,
-                                      (1130, 40, 1230, 100))
+    x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/pindao_button.bmp", 0.9,
+                                  (1365, 761, 1510, 813))
     print(x,y)
     # stop = time()
     # # print(str(stop - start) + "秒")

@@ -100,22 +100,6 @@ def back_change_role(hwnd):
                 count = 0
 
 
-# 传入1去正常频道，其他为特殊频道
-def enter_pindao(hwnd, change):
-    x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/pindao_button.bmp", 0.9,
-                                  (1365, 761, 1510, 813))
-    if x > 0 and y > 0:
-        if change == "1":
-            left_click(hwnd, (x, y))
-            delay(5000)
-        else:
-            left_click(hwnd, (x, y - 100))
-            delay(500)
-            key_press(hwnd, "enter")
-    else:
-        log.info("没到选择频道页面")
-
-
 if __name__ == '__main__':
     hwnd = findHwnd("钉钉")
     capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-is_boss_over.bmp")
