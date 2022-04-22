@@ -132,7 +132,10 @@ def wuji(hwnd, into_result, position):
             key_press(hwnd, "Q")
             delay(1500)
             key_press(hwnd, "3")
-            delay(4500)
+            delay(500)
+            for i in range(10):
+                left_click(hwnd, (50, 50))
+                delay(400)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
             key_down(hwnd, "W")

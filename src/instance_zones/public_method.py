@@ -119,7 +119,7 @@ def sell_page(hwnd):
     while True:
         delay(200)
         key_press(hwnd, "6")
-        delay(200)
+        delay(500)
         key_press(hwnd, "F")
         delay(600)
         left_double_click(hwnd, (1285, 864))  # 商店按钮
@@ -138,7 +138,7 @@ def sell_page(hwnd):
             break
         else:
             count = count + 1
-            if count > 2:  # 重复3次就是没装备
+            if count > 1:  # 重复3次就是没装备
                 log.info("没装备卖")
                 capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-sell_page.bmp")
                 break
