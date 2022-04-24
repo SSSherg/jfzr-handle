@@ -188,6 +188,69 @@
       "isGeDuoBox": "no",
       "isPet": "yes",
       "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-lang.bmp",
+      "map": "cangqiong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-hongling.bmp",
+      "map": "ge_duo_mi_gong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "yes",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-chengling.bmp",
+      "map": "ge_duo_mi_gong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "yes",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-huangling.bmp",
+      "map": "ge_duo_mi_gong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "yes",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-qingling.bmp",
+      "map": "ge_duo_mi_gong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "yes",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-lvling.bmp",
+      "map": "ge_duo_mi_gong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "yes",
+      "isPet": "yes",
+      "isEmail": "no"
+    },
+    {
+      "name": "/resources/img/people/role-fenling.bmp",
+      "map": "ge_duo_mi_gong",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "yes",
+      "isPet": "yes",
+      "isEmail": "no"
     }
   ]
 }

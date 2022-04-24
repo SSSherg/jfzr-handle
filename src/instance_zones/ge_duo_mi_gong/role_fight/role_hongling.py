@@ -2,7 +2,7 @@
 from src.city.exit import back_city, back_change_role
 from src.instance_zones.cangqiong.cq_public_method import cq_zones_left_two, cq_left_to_right, cq_zones_right_two
 from src.instance_zones.public_method import zones_one, is_boss, is_boss_over, sell_page, loop_map, is_frequency_over, \
-    decompose
+    decompose, is_mi_gong_boss_over
 from util.keyboard_operation import key_press, key_down, key_up
 from util.log import log
 from util.mouse_operation import left_click
@@ -10,7 +10,7 @@ from util.utils import delay
 from util.window import findHwnd
 
 
-def hongling(hwnd):
+def hongling_mi_gong(hwnd):
     while True:
         if not zones_one(hwnd):
             return False  # 没进一图
@@ -27,7 +27,7 @@ def hongling(hwnd):
             else:
                 key_down(hwnd, "S")
                 delay(100)
-                for i in range(2):
+                for i in range(4):
                     left_click(hwnd, (50, 50))
                     delay(500)
             if discount == 0:
@@ -37,8 +37,8 @@ def hongling(hwnd):
                 key_up(hwnd, "S")
                 discount = 0
             count = count + 1
-            if count > 16:
-                if is_boss_over(hwnd):
+            if count > 20:
+                if is_mi_gong_boss_over(hwnd):
                     count = 0
                     temp = False
                     key_up(hwnd, "W")
@@ -56,4 +56,4 @@ def hongling(hwnd):
 
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
-    hongling(hwnd)
+    hongling_mi_gong(hwnd)

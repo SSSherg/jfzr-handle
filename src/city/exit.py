@@ -32,7 +32,7 @@ def back_city(hwnd):
             key_press(hwnd, "esc")
             delay(500)
             count = count + 1
-            if count > 20:
+            if count > 30:
                 key_down(hwnd, "S")
                 delay(1000)
                 key_up(hwnd, "S")

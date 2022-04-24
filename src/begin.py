@@ -1,7 +1,7 @@
 from time import time
 
 from src.city.before import login, is_login, email
-from src.city.enter import role_chance
+from src.city.enter import role_chance, role_change, enter_pindao
 from util.ini_file_operation import readIni, initIni, writeIni
 from util.log import log
 from util.process_operation import kill
@@ -27,7 +27,8 @@ def begin():
             map_name = readIni("map")
             if map_type == 0:
                 if map_name == "ge_duo_mi_gong":
-                    # 换频道
+                    role_change(hwnd)
+                    enter_pindao(hwnd, "0")
                     map_type = 1
             log.info("角色开始：" + readIni("name") + "  地图：" + map_name)
             if not login(hwnd,  readIni("full_name")):     # 登录角色

@@ -53,7 +53,7 @@ def is_login(hwnd):
 
 
 def email(hwnd):
-    key_press(hwnd, "M")   # 一定要按
+    key_press(hwnd, "M")  # 一定要按
     delay(300)
     email_count = 1
     email_temp = True
@@ -84,34 +84,35 @@ def email(hwnd):
                 key_press(hwnd, "enter")
                 delay(1400)
             else:
-                writeIni("isEmail", "no")   # 邮件收过了就不用再收了
+                writeIni("isEmail", "no")  # 邮件收过了就不用再收了
                 email_temp = False
-    if readIni("isGeDuoBox") == "yes":    # 要先点到背包消耗品位置
+    if readIni("isGeDuoBox") == "yes":  # 要先点到背包消耗品位置
         delay(200)
-        left_click(hwnd, (1240, 160))
-        delay(200)
-        left_click(hwnd, (1276, 422))
-        delay(200)
+        left_click(hwnd, (1265, 160))
+        delay(500)
+        left_click(hwnd, (1305, 422))
+        delay(500)
         # 使用戈多宝箱
-        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/geduo_box.bmp", 0.9,
-                                          (1204, 424, 1560, 781))
+        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/geduo_box.bmp", 0.7,
+                                      (1204, 424, 1560, 781))
         if x > 0 and y > 0:
+            log.info("开启戈多箱子！")
             right_click(hwnd, (x, y))
-            delay(200)
+            delay(1000)
             key_press(hwnd, "enter")
             delay(2500)
             key_press(hwnd, "enter")
             writeIni("isGeDuoBox", "no")  # 戈多开过了
             delay(1000)
-    if readIni("isGiftBox") == "yes":    # 要先点到背包消耗品位置
+    if readIni("isGiftBox") == "yes":  # 要先点到背包消耗品位置
         delay(200)
         left_click(hwnd, (1240, 160))
-        delay(200)
+        delay(500)
         left_click(hwnd, (1276, 422))
-        delay(200)
+        delay(500)
         # 使用超凡礼盒
-        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/gift.bmp", 0.9,
-                                          (1204, 424, 1560, 781))
+        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/geduo_box.bmp", 0.7,
+                                  (1204, 424, 1560, 781))
         if x > 0 and y > 0:
             right_click(hwnd, (x, y))
             delay(200)
@@ -120,14 +121,14 @@ def email(hwnd):
             key_press(hwnd, "enter")
             writeIni("isGiftBox", "no")  # 礼盒开过了
     email_temp = True
-    if readIni("isPet") == "yes":    # 要先点到宠物栏
+    if readIni("isPet") == "yes":  # 要先点到宠物栏
         count = 0
         while email_temp:
             delay(200)
             left_click(hwnd, (1428, 160))
-            delay(200)
+            delay(500)
             left_click(hwnd, (1225, 422))
-            delay(200)
+            delay(500)
             # 使用超凡礼盒
             x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/pig.bmp", 0.9,
                                           (1204, 424, 1560, 781))
@@ -152,9 +153,4 @@ def email(hwnd):
 
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
-    move_to(hwnd, (1449, 234))
-    for i in range(10):
-        scroll(hwnd, -120, (1449, 234))
-        delay(500)
-    # left_click(hwnd, (1428, 160))
-    # left_click(hwnd, (1225, 422))
+    email(hwnd)

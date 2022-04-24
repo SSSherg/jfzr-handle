@@ -44,6 +44,19 @@ def is_boss_over(hwnd):
                 return False
 
 
+# 判断迷宫boss结束,true为结束
+def is_mi_gong_boss_over(hwnd):
+    while True:
+        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/boss_over.bmp", 0.9,
+                                      (1432, 0, 1560, 135))
+        if x > 0 and y > 0:
+            key_press(hwnd, "esc")
+            delay(200)
+            return True
+        else:
+            return False
+
+
 # 循环开图
 def loop_map(hwnd):
     count = 0
