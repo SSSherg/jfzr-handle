@@ -22,11 +22,11 @@ def login(hwnd, full_name):
             return True
         else:
             move_to(hwnd, (1449, 234))
-            if move_count < 10:
+            if move_count < 16:
                 scroll(hwnd, -120, (1449, 234))
                 delay(500)
                 move_count = move_count + 1
-            if move_count > 9:
+            if move_count > 15:
                 for j in range(10):
                     scroll(hwnd, 120, (1449, 234))
                     delay(500)
@@ -153,4 +153,4 @@ def email(hwnd):
 
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
-    email(hwnd)
+    login(hwnd, sys.path[2] + "/resources/img/people/role-lang.bmp")

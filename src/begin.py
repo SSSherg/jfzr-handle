@@ -27,6 +27,7 @@ def begin():
             map_name = readIni("map")
             if map_type == 0:
                 if map_name == "ge_duo_mi_gong":
+                    log.info("开始迷宫")
                     role_change(hwnd)
                     enter_pindao(hwnd, "0")
                     map_type = 1

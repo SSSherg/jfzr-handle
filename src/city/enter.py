@@ -455,6 +455,7 @@ def enter_pindao(hwnd, change):
                                   (1365, 761, 1510, 813))
         if x > 0 and y > 0:
             if change == "1":
+                log.info("进入戈多频道")
                 left_click(hwnd, (1451, 520))
                 delay(500)
                 left_click(hwnd, (x, y))
@@ -485,6 +486,8 @@ def role_change(hwnd):
         x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/role_change.bmp", 0.9,
                                       (1333, 854, 1400, 885))
         if x > 0 and y > 0:
+            log.info("点击上一步")
+            delay(1200)
             left_click(hwnd, (x, y))
             delay(2000)
             return
@@ -493,7 +496,6 @@ def role_change(hwnd):
             delay(500)
             if count > 10:
                 log.info("没到选择角色界面")
-                #todo
                 return
 
 

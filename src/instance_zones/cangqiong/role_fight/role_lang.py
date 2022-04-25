@@ -53,7 +53,12 @@ def lang(hwnd, into_result, position):
             delay(200)
             key_press(hwnd, "esc")
             delay(200)
-            key_press(hwnd, "alt")
+            key_down(hwnd, "W")
+            delay(500)
+            key_up(hwnd, "W")
+            key_press(hwnd, "T")
+            delay(500)
+            key_press(hwnd, "R")
             delay(1300)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
@@ -68,7 +73,7 @@ def lang(hwnd, into_result, position):
                 key_press(hwnd, "enter")
                 delay(200)
                 key_down(hwnd, "W")   # 换右图
-                delay(3000)
+                delay(1500)
                 key_up(hwnd, "W")
                 key_down(hwnd, "D")  # 换右图
                 delay(2000)
@@ -102,9 +107,10 @@ def lang(hwnd, into_result, position):
             key_up(hwnd, "W")
             delay(400)
             key_press(hwnd, "T")
-            delay(400)
-            key_press(hwnd, "R")
-            delay(3700)
+            for g in range(6):
+                left_click(hwnd, (50, 50))
+                delay(300)
+            delay(2000)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
             delay(1200)
@@ -122,12 +128,13 @@ def lang(hwnd, into_result, position):
             delay(200)
             key_press(hwnd, "esc")
             delay(300)
-            key_press(hwnd, "alt")
+            key_press(hwnd, "R")
+            delay(2000)
+            key_press(hwnd, "1")
             delay(1000)
-            key_down(hwnd, "S")
-            delay(700)
-            key_up(hwnd, "S")
-            delay(4500)
+            for g in range(6):
+                left_click(hwnd, (50, 50))
+                delay(300)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
             key_down(hwnd, "W")
