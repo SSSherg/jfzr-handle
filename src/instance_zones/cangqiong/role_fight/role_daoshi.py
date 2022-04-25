@@ -103,10 +103,10 @@ def daoshi(hwnd, into_result, position):
             delay(400)
             key_press(hwnd, "X")
             delay(1000)
-            for g in range(4):
+            for g in range(8):
                 left_click(hwnd, (50, 50))
                 delay(300)
-            delay(1700)
+            delay(500)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
             delay(1200)

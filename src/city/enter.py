@@ -473,7 +473,7 @@ def enter_pindao(hwnd, change):
             delay(500)
             if count > 10:
                 log.info("没到选择频道页面")
-                back_change_role(hwnd)
+                #todo
                 return
 
 
@@ -493,7 +493,7 @@ def role_change(hwnd):
             delay(500)
             if count > 10:
                 log.info("没到选择角色界面")
-                back_change_role(hwnd)
+                #todo
                 return
 
 
