@@ -76,8 +76,13 @@ def fuwen(hwnd, into_result, position):
                 key_down(hwnd, "S")  # 换右图
                 delay(500)
                 key_up(hwnd, "S")
-                cq_left_to_right(hwnd)
-                return fuwen(hwnd, "right", "in")
+                lr_result = cq_left_to_right(hwnd)
+                if lr_result == "reset":
+                    return "reset"
+                elif lr_result == "break":
+                    return "break"
+                else:
+                    return fuwen(hwnd, "right", "in")
     else:  # 右图
         while True:
             if not zones_one(hwnd, position):
@@ -125,7 +130,10 @@ def fuwen(hwnd, into_result, position):
             delay(1000)
             key_up(hwnd, "T")
             key_down(hwnd, "R")
-            delay(4500)
+            delay(1500)
+            for g in range(10):
+                left_click(hwnd, (50, 50))
+                delay(300)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
             key_down(hwnd, "W")

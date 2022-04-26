@@ -78,8 +78,13 @@ def daoshi(hwnd, into_result, position):
                 key_down(hwnd, "S")  # 换右图
                 delay(500)
                 key_up(hwnd, "S")
-                cq_left_to_right(hwnd)
-                return daoshi(hwnd, "right", "in")
+                lr_result = cq_left_to_right(hwnd)
+                if lr_result == "reset":
+                    return "reset"
+                elif lr_result == "break":
+                    return "break"
+                else:
+                    return daoshi(hwnd, "right", "in")
     else:  # 右图
         while True:
             if not zones_one(hwnd, position):

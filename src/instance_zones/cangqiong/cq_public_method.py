@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+import time
+
 from src.city.exit import back_city, back_change_role
 from src.instance_zones.public_method import is_frequency_over
-from util.find_picture_color import colors_son_for_parent
+from util.date_utils import getTimeStr
+from util.find_picture_color import colors_son_for_parent, capture_the_current_window_screen
+from util.ini_file_operation import readIni
 from util.keyboard_operation import key_up, key_down, key_press
 from util.log import log
 from util.mouse_operation import left_click
@@ -23,9 +27,11 @@ def cq_zones_left_two(hwnd):
             delay(100)
             count = count + 1
             if count > 20:
+                log.info("没进苍穹左二图重启")
+                capture_the_current_window_screen(hwnd,
+                                                  getTimeStr(time.time()) + readIni("name") + "-cq_zones_left_two.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
-                log.info("没进苍穹左二图重启")
                 return False
 
 
@@ -44,9 +50,11 @@ def cq_zones_right_two(hwnd):
             delay(100)
             count = count + 1
             if count > 20:
+                log.info("没进苍穹右二图重启")
+                capture_the_current_window_screen(hwnd,
+                                                  getTimeStr(time.time()) + readIni("name") + "-cq_zones_right_two.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
-                log.info("没进苍穹右二图重启")
                 return False
 
 
@@ -66,21 +74,23 @@ def cq_left_to_right(hwnd):
             delay(500)
             log.info("左苍穹图内进右苍穹")
             if is_frequency_over(hwnd):
+                log.info("右图没次数了")
                 delay(400)
                 key_press(hwnd, "enter")
                 back_city(hwnd)
                 back_change_role(hwnd)
-                log.info("右图没次数了")
-                return False
+                return "break"
             return True
         else:
             delay(200)
             count = count + 1
             if count > 30:
+                log.info("左苍穹图内进右苍穹，没进选图界面重启")
+                capture_the_current_window_screen(hwnd,
+                                                  getTimeStr(time.time()) + readIni("name") + "-cq_left_to_right.bmp")
                 back_city(hwnd)
                 back_change_role(hwnd)
-                log.info("左苍穹图内进右苍穹，没进选图界面重启")
-                return False
+                return "reset"
 
 
 
