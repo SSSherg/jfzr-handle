@@ -132,8 +132,11 @@ def lieyan(hwnd, into_result, position):
             key_press(hwnd, "esc")
             delay(300)
             key_press(hwnd, "Q")
-            delay(4500)
+            delay(1500)
             key_press(hwnd, "G")
+            for g in range(10):
+                left_click(hwnd, (50, 50))
+                delay(300)
             if not is_boss_over(hwnd):
                 return False    # boss没打死
             key_down(hwnd, "W")

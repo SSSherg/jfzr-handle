@@ -106,7 +106,10 @@ def fuwen(hwnd, into_result, position):
             key_press(hwnd, "Q")
             delay(400)
             key_press(hwnd, "1")
-            delay(3700)
+            delay(700)
+            for g in range(10):
+                left_click(hwnd, (50, 50))
+                delay(300)
             key_down(hwnd, "W")
             key_down(hwnd, "F")
             delay(1200)

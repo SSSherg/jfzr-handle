@@ -59,7 +59,8 @@ def lang(hwnd, into_result, position):
             key_press(hwnd, "T")
             delay(500)
             key_press(hwnd, "R")
-            delay(1300)
+            delay(1000)
+            key_press(hwnd, "1")
             if not is_boss_over(hwnd):
                 return False    # boss没打死
             key_down(hwnd, "W")

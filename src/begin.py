@@ -60,12 +60,13 @@ def begin():
         all_money = int(all_money) + int(end_money)
         today_money = int(today_money) + int(money)
     log.info("程序结束,今日共获取金币：" + str(today_money) + ", 总金币：" + str(all_money))
+    writeIni("start", 0)
     kill(hwnd)
 
 
 def test():
     return True
 
+
 if __name__ == '__main__':
-    real_money = int(8828388888) - int(7777237777)
-    print(real_money)
+    writeIni("start", 0)
