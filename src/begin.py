@@ -57,7 +57,10 @@ def begin():
         log.info("角色耗时: "+str(stop_time - start_time)+" 秒,获取金币：" + str(money))
         start = start + 1
         writeIni("start", start)
-        all_money = int(all_money) + int(end_money)
+        if readIni("map") == "ge_duo_mi_gong":   # 如果改角色刷的是戈多，就是重复角色，只需要算增量
+            all_money = int(all_money) + int(money)
+        else:
+            all_money = int(all_money) + int(end_money)
         today_money = int(today_money) + int(money)
     log.info("程序结束,今日共获取金币：" + str(today_money) + ", 总金币：" + str(all_money))
     writeIni("start", 0)
