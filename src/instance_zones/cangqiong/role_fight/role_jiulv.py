@@ -42,7 +42,7 @@ def jiulv(hwnd, into_result, position):
             key_up(hwnd, "F")
             key_up(hwnd, "W")
             key_down(hwnd, "D")
-            delay(1400)
+            delay(1800)
             key_up(hwnd, "D")
             if not is_boss(hwnd):
                 return False    # 没进BOSS图
