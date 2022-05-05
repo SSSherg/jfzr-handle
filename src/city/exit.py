@@ -90,11 +90,11 @@ def back_change_role(hwnd):
             key_press(hwnd, "esc")
             delay(500)
             count = count + 1
-            if count > 10:
+            if count > 20:
                 key_down(hwnd, "S")
                 delay(1000)
                 key_up(hwnd, "S")
-            if count > 15:
+            if count > 25:
                 log.info("找不到返回角色页面")
                 capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-back_change_role.bmp")
                 count = 0

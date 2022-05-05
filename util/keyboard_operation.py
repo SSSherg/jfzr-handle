@@ -101,7 +101,5 @@ def key_press(hwnd, key):
 
 
 if __name__ == '__main__':
-    hwnd = findHwnd("智能中枢接口.md - Typora")
-    while True:
-        left_click(hwnd, (50, 50))
-        key_press(hwnd, "f8")
+    hwnd = findHwnd("")
+    key_press(hwnd, "esc")
