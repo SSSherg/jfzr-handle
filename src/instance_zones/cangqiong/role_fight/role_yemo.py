@@ -73,10 +73,10 @@ def yemo(hwnd, into_result, position):
                 key_press(hwnd, "enter")
                 delay(200)
                 key_down(hwnd, "W")   # 换右图
-                delay(1200)
+                delay(2200)
                 key_up(hwnd, "W")
                 key_down(hwnd, "D")  # 换右图
-                delay(1000)
+                delay(2000)
                 key_up(hwnd, "D")
                 key_down(hwnd, "S")  # 换右图
                 delay(500)
