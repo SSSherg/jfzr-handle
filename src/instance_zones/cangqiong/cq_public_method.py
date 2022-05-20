@@ -16,7 +16,7 @@ from util.utils import delay
 def cq_zones_left_two(hwnd):
     count = 0
     while True:
-        x, y = colors_son_for_parent(hwnd, [(119, 147, 76), (57, 150, 99)], 0.9, (1414, 33, 1512, 122))
+        x, y = colors_son_for_parent(hwnd, [(119, 147, 76), (57, 150, 99), (244, 217, 102)], 0.9, (1414, 33, 1512, 122))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
             return True
@@ -39,7 +39,7 @@ def cq_zones_left_two(hwnd):
 def cq_zones_right_two(hwnd):
     count = 0
     while True:
-        x, y = colors_son_for_parent(hwnd, [(57, 150, 99), (119, 147, 76)], 0.9, (1510, 98, 1550, 148))
+        x, y = colors_son_for_parent(hwnd, [(57, 150, 99), (119, 147, 76), (244, 217, 102)], 0.9, (1510, 98, 1550, 148))
         if x > 0 and y > 0:
             key_up(hwnd, "W")
             return True

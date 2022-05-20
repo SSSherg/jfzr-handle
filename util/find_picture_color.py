@@ -148,16 +148,16 @@ if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
     # window_capture("../3.bmp", hwnd, (1305, 64, 1500, 765))
     # # start = time()
-    x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/role_change.bmp", 0.9,
-                                      (1333, 854, 1400, 885))
-    print(x,y)
+    # x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/cityAndPage/role_change.bmp", 0.9,
+    #                                   (1333, 854, 1400, 885))
+    # print(x,y)
     # stop = time()
     # # print(str(stop - start) + "秒")
 
     # # print(inty)
     # # # # (18,324,47,348)
-    # a, b = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (60, 785, 110, 851))
-    # print(a, b)
+    a, b = colors_son_for_parent(hwnd, [(119, 147, 76), (57, 150, 99), (244, 217, 102)], 0.9, (1414, 33, 1512, 122))
+    print(a, b)
     # print(color_similarity((84, 90, 169),(84, 90, 169)))
     # hwnd = findHwnd("钉钉")
     # print(get_length_width(hwnd))
