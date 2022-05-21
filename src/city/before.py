@@ -1,6 +1,9 @@
 import sys
+import time
 
-from util.find_picture_color import picture_son_for_parent
+from src.city.exit import back_city, back_change_role
+from util.date_utils import getTimeStr
+from util.find_picture_color import picture_son_for_parent, capture_the_current_window_screen
 from util.ini_file_operation import readIni, writeIni
 from util.keyboard_operation import key_press
 from util.log import log
@@ -68,6 +71,9 @@ def email(hwnd):
             delay(300)
             if email_count > 10:
                 log.info("没检测到邮箱！")
+                capture_the_current_window_screen(hwnd, getTimeStr(time.time()) + readIni("name") + "-email.bmp")
+                back_city(hwnd)
+                back_change_role(hwnd)
                 return False
     email_temp = True
     if readIni("isEmail") == "yes":
