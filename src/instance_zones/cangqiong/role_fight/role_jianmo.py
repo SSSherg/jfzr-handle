@@ -90,7 +90,7 @@ def jianmo(hwnd, into_result, position):
                 return False    # 没进一图
             key_press(hwnd, "f2")
             key_down(hwnd, "W")
-            delay(2400)
+            delay(2200)
             key_up(hwnd, "W")
             key_press(hwnd, "numpad1")
             delay(3800)

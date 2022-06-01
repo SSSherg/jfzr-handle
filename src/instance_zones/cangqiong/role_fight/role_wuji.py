@@ -97,7 +97,7 @@ def wuji(hwnd, into_result, position):
                 return False    # 没进一图
             key_press(hwnd, "f2")
             key_down(hwnd, "W")
-            delay(2800)
+            delay(2600)
             key_up(hwnd, "W")
             key_press(hwnd, "numpad1")
             delay(3800)
