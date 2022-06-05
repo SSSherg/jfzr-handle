@@ -32,7 +32,7 @@ def shikong(hwnd, into_result, position):
             if not cq_zones_left_two(hwnd):
                 return False    # 没进二图
             key_down(hwnd, "W")
-            delay(700)
+            delay(500)
             key_up(hwnd, "W")
             key_press(hwnd, "C")
             delay(2700)

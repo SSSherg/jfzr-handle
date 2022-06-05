@@ -99,7 +99,7 @@ def email(hwnd):
         left_click(hwnd, (1305, 422))
         delay(500)
         # 使用戈多宝箱
-        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/geduo_box.bmp", 0.7,
+        x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/geduo_box.bmp", 0.6,
                                       (1204, 424, 1560, 781))
         if x > 0 and y > 0:
             log.info("开启戈多箱子！")
