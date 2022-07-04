@@ -2,7 +2,7 @@
 from src.city.exit import back_city, back_change_role
 from src.instance_zones.cangqiong.cq_public_method import cq_zones_left_two, cq_left_to_right, cq_zones_right_two
 from src.instance_zones.public_method import zones_one, is_boss, is_boss_over, sell_page, loop_map, is_frequency_over, \
-    decompose
+    decompose, is_no_pilao
 from util.keyboard_operation import key_press, key_down, key_up
 from util.log import log
 from util.mouse_operation import left_click
@@ -15,6 +15,9 @@ def nvwang(hwnd):
         if not zones_one(hwnd):
             return False  # 没进一图
         key_press(hwnd, "f2")  # 开鞋子加速
+        key_down(hwnd, "A")  # 往前走一点
+        delay(250)
+        key_up(hwnd, "A")
         key_down(hwnd, "W")  # 往前走一点
         delay(300)
         key_up(hwnd, "W")
@@ -38,7 +41,14 @@ def nvwang(hwnd):
         delay(1000)
         key_up(hwnd, "W")
         loop_map(hwnd)  # 循环开图
-        delay(1500)
+        delay(1200)
+        if is_no_pilao(hwnd):
+            delay(200)
+            key_press(hwnd, "enter")
+            delay(200)
+            back_city(hwnd)  # 回城
+            back_change_role(hwnd)  # 回选择角色界面
+            return True
 
 
 if __name__ == '__main__':
