@@ -14,16 +14,15 @@ def nvwang(hwnd):
     while True:
         if not zones_one(hwnd):
             return False  # 没进一图
-        key_press(hwnd, "f2")
-        key_press(hwnd, "numpad1")
-        delay(2600)
-        key_down(hwnd, "W")
-        key_down(hwnd, "F")
-        delay(600)
-        key_up(hwnd, "F")
+        key_press(hwnd, "f2")  # 开鞋子加速
+        key_down(hwnd, "W")  # 往前走一点
+        delay(300)
         key_up(hwnd, "W")
+        key_press(hwnd, "E")    # 位移到怪堆
         delay(500)
-        key_down(hwnd, "W")
+        key_press(hwnd, "6")    # 宠物技能吸怪打怪
+        delay(5000)
+        key_down(hwnd, "W")     # 往前走顺便按F
         key_down(hwnd, "F")
         delay(600)
         key_up(hwnd, "F")
@@ -31,16 +30,13 @@ def nvwang(hwnd):
         if not is_boss(hwnd):
             return False  # 没进BOSS图
         delay(200)
-        key_down(hwnd, "A")
-        delay(50)
-        key_up(hwnd, "A")
-        key_down(hwnd, "W")
-        delay(300)
-        key_up(hwnd, "W")
-        key_press(hwnd, "E")
+        key_press(hwnd, "numpad1")   # 小键盘1号键，天界头
         delay(1300)
         if not is_boss_over(hwnd):
             return False  # boss没打死
+        key_down(hwnd, "W")  # 往前走捡东西
+        delay(1000)
+        key_up(hwnd, "W")
         loop_map(hwnd)  # 循环开图
         delay(1500)
 

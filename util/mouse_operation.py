@@ -88,5 +88,5 @@ def scroll(hwnd, delta, pos):
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
     print(hwnd)
-    left_click(hwnd, (1400, 445))
+    move_to(hwnd, (1400, 445))
     # scroll(hwnd, -120, (1354, 503))
