@@ -12,6 +12,14 @@ from util.mouse_operation import scroll, left_click, move_to, left_double_click
 from util.utils import delay
 from util.window import findHwnd
 
+# 判断是否没疲劳了，true为没疲劳了，
+def is_no_pilao(hwnd):
+    x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/no_pilao.bmp", 0.9,
+                                  (552, 343, 1058, 516))
+    if x > 0 and y > 0:
+        return True
+    else:
+        return False
 
 # 判断是否次数用尽，true为没次数了，
 def is_frequency_over(hwnd):

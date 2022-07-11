@@ -20,7 +20,8 @@ from src.instance_zones.cangqiong.role_fight.role_wuji import wuji
 from src.instance_zones.cangqiong.role_fight.role_yemo import yemo
 from src.instance_zones.cangqiong.role_fight.role_zhankuang import zhankuang
 from src.instance_zones.ge_duo_mi_gong.role_fight.role_hongling import hongling_mi_gong
-from src.instance_zones.public_method import is_frequency_over
+from src.instance_zones.public_method import is_frequency_over, is_no_pilao
+from src.instance_zones.tao_fa.role_fight.role_nvwang import nvwang
 from util.find_picture_color import colors_son_for_parent, picture_son_for_parent
 from util.keyboard_operation import key_press, key_down, key_up
 from util.log import log
@@ -342,6 +343,18 @@ def role_chance(hwnd, name, map):
         else:
             log.info("地图错误：" + map)
             return "break"
+    elif name == "nvwang":
+        if map == "taofa":
+            into_result = into_taofa(hwnd)
+            if into_result == "reset":
+                return "reset"
+            elif into_result == "break":
+                return "break"
+            else:
+                return nvwang(hwnd)
+        else:
+            log.info("地图错误：" + map)
+            return "break"
     else:
         log.info("角色错误：" + name)
         return "break"
@@ -407,8 +420,56 @@ def into_cangqiong(hwnd):
                 back_change_role(hwnd)
                 return "reset"
 
+# 进讨伐，返回reset代表重启，
+def into_taofa(hwnd):
+    key_press(hwnd, "W")
+    delay(500)
+    key_down(hwnd, "W")
+    key_down(hwnd, "A")
+    delay(1500)
+    key_up(hwnd, "W")
+    key_up(hwnd, "A")
+    key_down(hwnd, "W")
+    delay(3000)
+    key_up(hwnd, "W")
+    key_down(hwnd, "W")
+    key_down(hwnd, "A")
+    delay(500)
+    count = 0
+    while True:
+        x, y = colors_son_for_parent(hwnd, [(150, 255, 255)], 0.9, (60, 785, 110, 851))
+        if x > 0 and y > 0:
+            key_up(hwnd, "W")
+            key_up(hwnd, "A")
+            delay(200)
+            left_click(hwnd, (600, 820))
+            delay(1200)
+            move_to(hwnd, (1050, 480))  # 最右图
+            delay(500)
+            key_press(hwnd, "F")
+            delay(500)
+            key_press(hwnd, "enter")
+            delay(500)
+            if is_no_pilao(hwnd):  # 没疲劳了
+                delay(300)
+                key_press(hwnd, "enter")
+                delay(300)
+                key_press(hwnd, "esc")
+                delay(300)
+                log.info("没疲劳了退出")
+                back_change_role(hwnd)
+                return "break"
+            return True
+        else:
+            count = count + 1
+            delay(500)
+            if count > 10:
+                log.info("没进选图界面重启")
+                back_change_role(hwnd)
+                return "reset"
 
-# 返回reset代表重启，返回left左图，right右图
+
+# 返回reset代表重启
 def into_mi_gong(hwnd):
     key_press(hwnd, "W")
     delay(500)

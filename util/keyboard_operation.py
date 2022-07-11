@@ -101,5 +101,7 @@ def key_press(hwnd, key):
 
 
 if __name__ == '__main__':
-    hwnd = findHwnd("")
-    key_press(hwnd, "esc")
+    hwnd = findHwnd("JFZR")
+    while True:
+        delay(500)
+        key_press(hwnd, "space")

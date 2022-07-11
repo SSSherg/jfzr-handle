@@ -199,6 +199,15 @@
       "isEmail": "no"
     },
     {
+      "name": "/resources/img/people/role-nvwang.bmp",
+      "map": "taofa",
+      "map_level": "10",
+      "isGiftBox": "no",
+      "isGeDuoBox": "no",
+      "isPet": "no",
+      "isEmail": "no"
+    },
+    {
       "name": "/resources/img/people/role-hongling.bmp",
       "map": "ge_duo_mi_gong",
       "map_level": "10",
