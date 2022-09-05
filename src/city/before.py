@@ -131,9 +131,9 @@ def email(hwnd):
         count = 0
         while email_temp:
             delay(200)
-            left_click(hwnd, (1428, 160))
+            left_click(hwnd, (1428, 99))
             delay(500)
-            left_click(hwnd, (1225, 422))
+            left_click(hwnd, (1225, 363))
             delay(500)
             # 使用超凡礼盒
             x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/pig.bmp", 0.9,
