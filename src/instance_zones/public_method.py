@@ -145,15 +145,15 @@ def sell_page(hwnd):
         delay(600)
         left_double_click(hwnd, (1285, 864))  # 商店按钮
         delay(400)
-        left_double_click(hwnd, (1251, 161))  # 角色栏
+        left_double_click(hwnd, (1251, 101))  # 角色栏
         delay(400)
-        left_double_click(hwnd, (1239, 423))  # 装备栏
+        left_double_click(hwnd, (1239, 363))  # 装备栏
         delay(400)
         left_double_click(hwnd, (593, 313))  # 出售栏 点一下会有bug(失效)
         delay(400)
         # 判断装备栏
         x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/instance_zones/is_zb_lan.bmp", 0.9,
-                                      (1200, 389, 1269, 460))
+                                      (1200, 329, 1269, 400))
         if x > 0 and y > 0:
             is_sale = True
             break

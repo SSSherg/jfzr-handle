@@ -112,13 +112,13 @@ def email(hwnd):
             delay(1000)
     if readIni("isGiftBox") == "yes":  # 要先点到背包消耗品位置
         delay(200)
-        left_click(hwnd, (1240, 160))
+        left_click(hwnd, (1240, 100))
         delay(500)
-        left_click(hwnd, (1276, 422))
+        left_click(hwnd, (1276, 362))
         delay(500)
         # 使用超凡礼盒
         x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/geduo_box.bmp", 0.7,
-                                  (1204, 424, 1560, 781))
+                                  (1204, 364, 1560, 721))
         if x > 0 and y > 0:
             right_click(hwnd, (x, y))
             delay(200)
@@ -137,7 +137,7 @@ def email(hwnd):
             delay(500)
             # 使用超凡礼盒
             x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/pig.bmp", 0.9,
-                                          (1204, 424, 1560, 781))
+                                          (1204, 374, 1560, 731))
             if x > 0 and y > 0:
                 right_click(hwnd, (x, y))
                 delay(200)
@@ -145,7 +145,7 @@ def email(hwnd):
                 writeIni("isPet", "no")  # 装备猪了
             else:
                 x, y = picture_son_for_parent(hwnd, sys.path[2] + "/resources/img/email/pig_on.bmp", 0.9,
-                                              (1200, 266, 1269, 330))
+                                              (1200, 216, 1269, 280))
                 if x > 0 and y > 0:
                     email_temp = False
                     writeIni("isPet", "no")  # 装备猪了
@@ -159,4 +159,4 @@ def email(hwnd):
 
 if __name__ == '__main__':
     hwnd = findHwnd("JFZR")
-    login(hwnd, sys.path[2] + "/resources/img/people/role-lang.bmp")
+    email(hwnd)
